@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        //利用对象键值对方法
+        //我们把数组每一项当做一个对象的属性名和属性值存储起来
+        //但是下每一次存储之前，我们首先判断当前这一项n是否在对象中已经存在了obj[n]如果值是n说明对象中已经存在这项，如果是undefine说明对象中没有
+        var ary=[1,2,3,4,2,2,3,3,4,1,1,2];
+        var obj={};
+        for(var i=0;i<ary.length;i++){
+            var cur=ary[i];
+            if(obj[cur]==cur){//已经存在cur==>cur在数组中重复，需要删除
+                ary[i]=ary[ary.length-1];
+                ary.length--;
+                i--;
+                continue;
+            }
+            obj[cur]=cur;
+        }
+        console.log(ary);
+        
+    </script> -->
+    <script>
+        var arr=[1,1,1,2,3,4,3,2,1,2,4,1,2,3,4];
+        
+        function reary(ary){
+            var obj={};
+            for(var i=0;i<ary.length;i++){
+                var cur=ary[i];
+                if(obj[cur]==cur){
+                    ary[i]=ary[ary.length-1];
+                    ary.length--;
+                    i--;
+                    continue;
+                }   
+                obj[cur]=cur;
+            }
+            ary.sort(function(a,b){
+                return a-b
+            });
+            return ary; 
+        }
+        
+        // var [a,b,c,d]=reary(arr)
+        console.log([a,b,c,d]=reary(arr));
+        
+    </script>
+</body>
+</html>
